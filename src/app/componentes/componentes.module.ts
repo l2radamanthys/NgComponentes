@@ -1,3 +1,4 @@
+import { ImageWithPreloadComponent } from './image-with-preload/image-with-preload.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -9,8 +10,11 @@ import { ComponentesComponent } from './componentes.component';
     ],
     declarations: [
         ComponentesComponent,
+        ImageWithPreloadComponent,
     ],
-    exports:[],
+    exports: [
+        ImageWithPreloadComponent,
+    ],
     providers: [],
 })
 export class ComponentesModule {}

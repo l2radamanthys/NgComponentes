@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+* {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.code {
+    font-family: 'Menlo', 'Source Code Pro', Courier New, Courier, monospace;
+}
+
+h1 {
+    font-weight: 300;
+}
+
+.small-image img {
+    width: 200px;
+}

@@ -1,20 +1,33 @@
 <h1>Listado de Componentes</h1>
 
+<ul>
+    <ng-container *ngFor="let element of componentes; let i=index;">
+    <li (click)="toggle(element)"> {{ i + 1 }} {{ element.key }}  </li>
+    </ng-container>
+</ul>
 
-<h3>preload-image</h3>
-<p> Imagen con precarga </p>
-<h4>parametros</h4>
-<div>
-    <span>src</span> 
-</div>
-<div>
-    <span>srcPreload</span> 
-</div>
-<div>
-    <span>srcError</span> 
+
+<div *ngIf="selected !== null">
+    <h3>{{ selected.key }}</h3>
+    <p> {{ selected.name }} </p>
+    <h3>Parametros</h3>
+    <ul>
+        <li *ngFor="let param of selected.params">
+            <span class="code">{{ param.key }}</span> {{ param.description }}
+        </li>
+    </ul>
+    <h3>Ejemplo</h3>
+    <pre class="code"> {{ selected.example }} </pre>
 </div>
 
+<!--
 <preload-image class="small-image"
     [src]="'https://wsurveyw.blob.core.windows.net/multimedia/profile/ef6c883c-8cd6-48d6-84f4-b4f38b8d9a76.jpg'" 
     [srcPreload]="'/assets/preload-image/progress.gif'"
     [srcError]="'https://cdn.browshot.com/static/images/not-found.png'"></preload-image>   
+
+<preload-image class="small-image"
+    [src]="'https://wsurveyw.blob.core.windows.net/multimedia/profile/ef6c883c-8cd6-48d6-84f4-b4f38b8d9a76x.jpg'" 
+    [srcPreload]="'/assets/preload-image/progress.gif'"
+    [srcError]="'https://cdn.browshot.com/static/images/not-found.png'"></preload-image>   
+-->

@@ -1,3 +1,4 @@
-:host >>> child.small-image {
-    width: 100px;
+
+:host /deep/ .small-image img {
+    width: 200px;
 }

@@ -18,16 +18,19 @@
     </ul>
     <h3>Ejemplo</h3>
     <pre class="code"> {{ selected.example }} </pre>
+    <br>
+    <!--
+    <ng-container *ngIf="selected.key === 'preload-image'">    
+        <preload-image class="small-image"
+            [src]="'https://wsurveyw.blob.core.windows.net/multimedia/profile/ef6c883c-8cd6-48d6-84f4-b4f38b8d9a76.jpg'" 
+            [srcPreload]="'/assets/preload-image/progress.gif'"
+            [srcError]="'https://cdn.browshot.com/static/images/not-found.png'"></preload-image>   
+    
+        <preload-image class="small-image"
+            [src]="'https://wsurveyw.blob.core.windows.net/multimedia/profile/ef6c883c-8cd6-48d6-84f4-b4f38b8d9a76x.jpg'" 
+            [srcPreload]="'/assets/preload-image/progress.gif'"
+            [srcError]="'https://cdn.browshot.com/static/images/not-found.png'"></preload-image>   
+    </ng-container>
+    -->
 </div>
 
-<!--
-<preload-image class="small-image"
-    [src]="'https://wsurveyw.blob.core.windows.net/multimedia/profile/ef6c883c-8cd6-48d6-84f4-b4f38b8d9a76.jpg'" 
-    [srcPreload]="'/assets/preload-image/progress.gif'"
-    [srcError]="'https://cdn.browshot.com/static/images/not-found.png'"></preload-image>   
-
-<preload-image class="small-image"
-    [src]="'https://wsurveyw.blob.core.windows.net/multimedia/profile/ef6c883c-8cd6-48d6-84f4-b4f38b8d9a76x.jpg'" 
-    [srcPreload]="'/assets/preload-image/progress.gif'"
-    [srcError]="'https://cdn.browshot.com/static/images/not-found.png'"></preload-image>   
--->

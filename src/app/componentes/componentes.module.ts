@@ -1,8 +1,11 @@
-import { ImageWithPreloadComponent } from './image-with-preload/image-with-preload.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ComponentesComponent } from './componentes.component';
+
+import { PreloadImageComponent } from './preload-image/preload-image.component';
+import { SeparadorComponent } from './separador/separador.component';
+
 
 @NgModule({
     imports: [
@@ -10,10 +13,12 @@ import { ComponentesComponent } from './componentes.component';
     ],
     declarations: [
         ComponentesComponent,
-        ImageWithPreloadComponent,
+        PreloadImageComponent,
+        SeparadorComponent,
     ],
     exports: [
-        ImageWithPreloadComponent,
+        PreloadImageComponent,
+        SeparadorComponent,
     ],
     providers: [],
 })

@@ -31,6 +31,16 @@ export class ComponentsListComponent {
                 },
             ],
             example: '<preload-image [src]="imagen.png" [preloadSrc]="loading.gif" [preloadSrc]="loading-error.png"><preload-image>'
+        },
+        {
+            key: 'separador',
+            name: 'Espaciador vertical',
+            params: [{
+                key: 'size',
+                type: 'number',
+                description: 'altura en pixels del separador'
+            }],
+            example: '<separador [size]="24"></separador>'
         }
     ];
 

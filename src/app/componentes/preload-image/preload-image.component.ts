@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { Http } from '@angular/http';
 
 
@@ -8,10 +8,11 @@ import { Http } from '@angular/http';
  */
 @Component({
     selector: 'preload-image',
-    templateUrl: './image-with-preload.component.html',
-    styleUrls: ['./image-with-preload.scss']
+    templateUrl: './preload-image.component.html',
+    styleUrls: ['./preload-image.scss'],
+    encapsulation: ViewEncapsulation.None
 })
-export class ImageWithPreloadComponent implements OnInit {
+export class PreloadImageComponent implements OnInit {
     @Input() src: string;
     @Input() srcPreload: string;
     @Input() srcError: string;

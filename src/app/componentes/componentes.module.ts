@@ -1,7 +1,6 @@
+import { CalendarComponent } from './calendar/calendar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ComponentesComponent } from './componentes.component';
 
 import { PreloadImageComponent } from './preload-image/preload-image.component';
 import { SeparadorComponent } from './separador/separador.component';
@@ -12,13 +11,14 @@ import { SeparadorComponent } from './separador/separador.component';
         CommonModule,
     ],
     declarations: [
-        ComponentesComponent,
         PreloadImageComponent,
         SeparadorComponent,
+        CalendarComponent,
     ],
     exports: [
         PreloadImageComponent,
         SeparadorComponent,
+        CalendarComponent,
     ],
     providers: [],
 })

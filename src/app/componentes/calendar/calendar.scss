@@ -1,0 +1,67 @@
+
+
+.calendar-month, .calendar-active-month {
+    font-weight: 400;
+}
+
+.calendar-month {
+    font-size: 16pt;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.calendar-active-month {
+    font-size: 22pt;
+}
+
+.calendar-day-name {
+    font-weight: 400;
+    font-size: 11pt;
+}
+
+td {
+    margin: 0px !important;
+    
+}
+
+.calendar-day {
+    background: #F5F5F5;
+    width: 72px;
+    height: 72px;
+    padding: 6px;
+    vertical-align: top;
+    // border: 1px solid #333;
+}
+
+.seleccionable {
+    cursor: pointer;
+}
+
+.calendar-day-active {
+    border: 1px solid #333;
+}
+
+.date-now {
+    background: #FFF9C4;
+    font-size: 12pt;
+    font-weight: 700;
+}
+
+
+.day-number {
+    display: block;
+    font-size: 11pt;
+    text-align: right;
+}
+
+.event-mark-container {
+    margin-top: 36px;
+}
+
+.event-mark {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    margin-right: 5px;
+}

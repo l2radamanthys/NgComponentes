@@ -1,0 +1,38 @@
+
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="7">  {{ year }} </th>
+        </tr>
+        <tr>
+            <th class="calendar-month" (click)="prevMonth()" colspan="2"> {{ getPrevMonthText() }} </th>
+            <th class="calendar-active-month" colspan="3"> {{ getCurrentMonthText() }} </th>
+            <th class="calendar-month" (click)="nextMonth()" colspan="2"> {{ getNextMonthText() }} </th>
+        </tr>
+        <tr>
+            <th *ngFor="let day of getDays()" class="calendar-day-name"> {{ day }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let week of weeks">
+            <td
+                    *ngFor="let day of week" 
+                    (click)="dayClick(day)"
+                    [ngClass]="{ 
+                        '': true, 
+                        'date-now': today.getDate() === day.day && today.getMonth() === month && today.getFullYear() === year,
+                        'calendar-day seleccionable': day.day !== null 
+                }"> 
+                <span class="day-number">{{ pad(day.day) }}</span>
+                <div class="event-mark-container">
+                    <div 
+                            *ngFor="let evt of dayEvents(day.day, month, year)" 
+                            class="event-mark" 
+                            [style.background]="evt.color" >
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

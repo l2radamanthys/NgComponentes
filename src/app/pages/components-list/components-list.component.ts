@@ -45,7 +45,6 @@ export class ComponentsListComponent {
     ];
 
 
-
     constructor() {
         this.selected = null;
     }

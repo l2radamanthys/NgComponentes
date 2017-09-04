@@ -9,7 +9,7 @@
     font-family: 'Menlo', 'Source Code Pro', Courier New, Courier, monospace;
 }
 
-h1 {
+h1, h2, h3 {
     font-weight: 300;
 }
 

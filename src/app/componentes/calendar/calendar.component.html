@@ -3,7 +3,7 @@
 <table>
     <thead>
         <tr>
-            <th colspan="7">  {{ year }} </th>
+            <th colspan="7" style="text-align: center;">  {{ year }} </th>
         </tr>
         <tr>
             <th class="calendar-month" (click)="prevMonth()" colspan="2"> {{ getPrevMonthText() }} </th>
@@ -20,14 +20,14 @@
                     *ngFor="let day of week" 
                     (click)="dayClick(day)"
                     [ngClass]="{ 
-                        '': true, 
+                        'calendar-day-active': day === activeDay, 
                         'date-now': today.getDate() === day.day && today.getMonth() === month && today.getFullYear() === year,
                         'calendar-day seleccionable': day.day !== null 
                 }"> 
                 <span class="day-number">{{ pad(day.day) }}</span>
                 <div class="event-mark-container">
                     <div 
-                            *ngFor="let evt of dayEvents(day.day, month, year)" 
+                            *ngFor="let evt of dayEvents(day.day, month + 1, year)" 
                             class="event-mark" 
                             [style.background]="evt.color" >
                     </div>

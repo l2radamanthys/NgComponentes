@@ -41,6 +41,16 @@ export class ComponentsListComponent {
                 description: 'altura en pixels del separador'
             }],
             example: '<separador [size]="24"></separador>'
+        }, 
+        {
+            key: 'calendar',
+            name: 'Calendario de Eventos',
+            params: [{
+                key: 'eventos',
+                type: 'any[]',
+                description: 'Listado de eventos'
+            }],
+            example: '<calendar [eventos]="eventos"></calendar>'
         }
     ];
 

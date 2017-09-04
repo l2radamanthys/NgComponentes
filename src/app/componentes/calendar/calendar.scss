@@ -1,7 +1,8 @@
 
 
 .calendar-month, .calendar-active-month {
-    font-weight: 400;
+    font-weight: 300;
+    text-align: center;
 }
 
 .calendar-month {
@@ -15,13 +16,18 @@
 }
 
 .calendar-day-name {
-    font-weight: 400;
-    font-size: 11pt;
+    font-weight: 300;
+    font-size: 10pt;
+    text-align: center;
+}
+
+table  {
+    border-collapse: inherit;
+    border-spacing: 0px;
 }
 
 td {
     margin: 0px !important;
-    
 }
 
 .calendar-day {
@@ -30,7 +36,7 @@ td {
     height: 72px;
     padding: 6px;
     vertical-align: top;
-    // border: 1px solid #333;
+    border: 1px solid #FFF;
 }
 
 .seleccionable {
@@ -38,7 +44,7 @@ td {
 }
 
 .calendar-day-active {
-    border: 1px solid #333;
+    border: 1px solid #A6A6A6;
 }
 
 .date-now {
@@ -47,7 +53,6 @@ td {
     font-weight: 700;
 }
 
-
 .day-number {
     display: block;
     font-size: 11pt;
@@ -55,7 +60,7 @@ td {
 }
 
 .event-mark-container {
-    margin-top: 36px;
+    margin-top: 12px;
 }
 
 .event-mark {

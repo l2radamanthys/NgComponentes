@@ -54,7 +54,7 @@ const COLOURS = [
     '#FFEB3B',
     '#FFC107',
     '#FF9800'
-]
+];
 
 
 @Component({
@@ -77,6 +77,7 @@ export class CalendarComponent implements OnInit {
         this.today = new Date();
         this.year = this.today.getFullYear();
         this.month = this.today.getMonth();
+        if (this.eventos === undefined) { this.eventos = []; }
         this.eventos.forEach(evt => {
             evt.start = typeof evt.start === 'string' ? new Date(evt.start) : evt.start;
             evt.end = typeof evt.end === 'string' ? new Date(evt.end) : evt.end;
@@ -106,6 +107,7 @@ export class CalendarComponent implements OnInit {
         return MONTHS[this.month > 0 ? this.month - 1 : 11];
     }
 
+
     /**
      * Devuelve el mes actual como texto
      * @author Ricardo D. Quiroga
@@ -114,6 +116,7 @@ export class CalendarComponent implements OnInit {
     public getCurrentMonthText(): string {
         return MONTHS[this.month];
     }
+
 
     /**
      * Devuelve la constante DAYS
@@ -241,9 +244,9 @@ export class CalendarComponent implements OnInit {
         if (day.day !== null) {
             let result = {
                 date: new Date(this.year, this.month, day.day),
-                eventos: this.dayEvents(day.day, this.month, this.year)
+                eventos: this.dayEvents(day.day, this.month + 1, this.year)
             };
-            // console.log(JSON.stringify(result, null, '  '));
+            this.activeDay = day;
             this.onDayClick.emit(result);
         }
     }
@@ -294,7 +297,6 @@ export class CalendarComponent implements OnInit {
     private getRandomNumber(min: number, max: number): number {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-
 }
 
 

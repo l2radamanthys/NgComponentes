@@ -1,0 +1,27 @@
+<div class="mini-calendar-container">
+    <div class="calendar-header">
+        <div class="arrow">
+            <img (click)="prevMonth()" src="/assets/mini-calendar/arrow-left.svg" alt="">
+        </div>
+        <div class="title">
+            <span> {{ monthName }} {{ year }} </span>
+        </div>
+        <div class="arrow">
+            <img (click)="nextMonth()" src="/assets/mini-calendar/arrow-right.svg" alt="">
+        </div>
+    </div>
+    <table class="table mini-calendar-table">
+        <thead>
+            <tr>
+                <th *ngFor="let d of daysOfWeek">{{ d }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let week of weeks">
+                <td *ngFor="let day of week"
+                [ngClass]="{ 'active': day === today.getDate() && month == today.getMonth() && year == today.getFullYear() }"
+                >{{ day }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -32,11 +32,13 @@ td {
 
 .calendar-day {
     background: #F5F5F5;
-    width: 72px;
+    min-width: 72px;
     height: 72px;
-    padding: 6px;
+    max-height: 72px;
+    padding: 12px;
     vertical-align: top;
     border: 1px solid #FFF;
+    overflow: hidden;
 }
 
 .seleccionable {
@@ -60,7 +62,7 @@ td {
 }
 
 .event-mark-container {
-    margin-top: 12px;
+    margin-top: 6px;
 }
 
 .event-mark {

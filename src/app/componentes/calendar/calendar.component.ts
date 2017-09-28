@@ -46,12 +46,12 @@ const DAYS_OF_MONTH = [
 
 const COLOURS = [
     '#03A9F4',
-    '#00BCD4',
     '#009688',
     '#F44336',
-    '#E91E63',
     '#9C27B0',
+    '#E91E63',
     '#FFEB3B',
+    '#00BCD4',
     '#FFC107',
     '#FF9800'
 ];
@@ -78,19 +78,23 @@ export class CalendarComponent implements OnInit {
         this.year = this.today.getFullYear();
         this.month = this.today.getMonth();
         if (this.eventos === undefined) { this.eventos = []; }
-        this.eventos.forEach(evt => {
+        this.eventos.forEach((evt, i) => {
             evt.start = typeof evt.start === 'string' ? new Date(evt.start) : evt.start;
+            evt.start.setHours(0, 0, 0, 0);
             evt.end = typeof evt.end === 'string' ? new Date(evt.end) : evt.end;
-            evt.color = this.getRandomColor();
+            evt.end.setHours(23, 59, 59, 999);
+            // evt.color = this.getRandomColor();
+            evt.color = this.getIndexColor(i);
         });
         this.weeks = this.calculateCalendar(this.month, this.year);
         this.activeDay = null;
+        console.log('>', this.eventos);
     }
 
 
     /**
      * Devuelve el mes siguiente como texto
-     * @author Ricardo D. Quiroga
+     * @author Ricarao D. Quiroga
      * @return {string}
      */
     public getNextMonthText(): string {
@@ -230,7 +234,7 @@ export class CalendarComponent implements OnInit {
      */
     public dayEvents(date, month, year): any[] {
         let d_ = new Date(year, month, date);
-        return this.eventos.filter(evt =>  evt.start <= d_ && evt.end >= d_ );
+        return this.eventos.filter(evt => evt.start <= d_ && evt.end >= d_);
     }
 
 
@@ -244,7 +248,7 @@ export class CalendarComponent implements OnInit {
         if (day.day !== null) {
             let result = {
                 date: new Date(this.year, this.month, day.day),
-                eventos: this.dayEvents(day.day, this.month + 1, this.year)
+                eventos: this.dayEvents(day.day, this.month, this.year)
             };
             this.activeDay = day;
             this.onDayClick.emit(result);
@@ -286,6 +290,10 @@ export class CalendarComponent implements OnInit {
         return COLOURS[this.getRandomNumber(0, COLOURS.length - 1)];
     }
 
+
+    private getIndexColor(i) {
+        return COLOURS[i % (COLOURS.length - 1)];
+    }
 
 
     /**

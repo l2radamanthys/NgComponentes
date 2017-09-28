@@ -27,7 +27,7 @@
                 <span class="day-number">{{ pad(day.day) }}</span>
                 <div class="event-mark-container">
                     <div 
-                            *ngFor="let evt of dayEvents(day.day, month + 1, year)" 
+                            *ngFor="let evt of dayEvents(day.day, month, year)" 
                             class="event-mark" 
                             [style.background]="evt.color" >
                     </div>

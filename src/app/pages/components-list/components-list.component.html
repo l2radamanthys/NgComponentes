@@ -16,7 +16,7 @@
         <h3>Parametros</h3>
         <ul>
             <li *ngFor="let param of selected.params">
-                <span class="code">{{ param.key }}</span> {{ param.description }}
+                <span class="code">{{ param.key }}: </span> {{ param.description }}
             </li>
         </ul>
         <h3>Ejemplo</h3>
@@ -43,13 +43,14 @@
                         { start: '2017-09-06T00:00:00', end: '2017-09-18T00:00:00', CodEvento: 'EVT_01' }]">
                 </calendar>
             </ng-container>
+            <ng-container *ngSwitchCase="'mini-calendar'">
+                <mini-calendar></mini-calendar>
+            </ng-container>
         </ng-container>
     </div>
 </div>
 <separador [size]="48"></separador>
 
-
-<mini-calendar></mini-calendar>
 
 
 

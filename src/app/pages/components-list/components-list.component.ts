@@ -30,7 +30,7 @@ export class ComponentsListComponent {
                     description: 'ruta de la imagen que se mostrara si no se pudo cargar la imagen principal'
                 },
             ],
-            example: '<preload-image [src]="imagen.png" [preloadSrc]="loading.gif" [preloadSrc]="loading-error.png"><preload-image>'
+            example: '<preload-image [src]="imagen.png" [srcPreload]="loading.gif" [srcError]="loading-error.png"><preload-image>'
         },
         {
             key: 'separador',
@@ -51,7 +51,17 @@ export class ComponentsListComponent {
                 description: 'Listado de eventos'
             }],
             example: '<calendar [eventos]="eventos"></calendar>'
-        }
+        },
+        {
+            key: 'mini-calendar',
+            name: 'Pequeño Calendario',
+            params: [ /*{
+                key: 'eventos',
+                type: 'any[]',
+                description: 'Listado de eventos'
+            }*/],
+            example: '<mini-calendar></mini-calendar>'
+        },
     ];
 
 
